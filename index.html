@@ -1405,56 +1405,59 @@
         <ul><li>다부처 패키지(상하수·산업안전) 출시</li><li><b>NEP</b> 지정 시 공공 20% 의무구매 진입</li><li>해외(동남아 CAGR 18.7% / 중동 CAGR 16.5%) 레퍼런스 확보</li></ul>
       </div>
     </div>
-    <!-- INLINE GANTT CHART (CSS 그리드 기반 자체 제작) -->
-    <div style="margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px">
-      <div style="display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;font-size:11px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:8px">
+    <!-- GANTT CHART — 8 작업 × 4 분기 -->
+    <div style="margin-top:18px;border:1px solid var(--line);padding:18px 20px">
+      <div style="font-size:10px;color:var(--accent);font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px">세부 타임라인</div>
+
+      <!-- 헤더 -->
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:end;border-bottom:1.5px solid var(--ink);padding-bottom:8px">
         <div></div>
-        <div style="text-align:center;font-weight:600;color:var(--brand-2)">2026 Q1</div>
-        <div style="text-align:center;font-weight:600;color:var(--brand-2)">2026 Q2</div>
-        <div style="text-align:center;font-weight:600;color:var(--brand-2)">2026 Q3</div>
-        <div style="text-align:center;font-weight:600;color:var(--brand-2)">2026 Q4</div>
+        <div style="text-align:center;font-size:11px;color:var(--ink);font-weight:600;letter-spacing:.08em">Q1</div>
+        <div style="text-align:center;font-size:11px;color:var(--ink);font-weight:600;letter-spacing:.08em">Q2</div>
+        <div style="text-align:center;font-size:11px;color:var(--ink);font-weight:600;letter-spacing:.08em">Q3</div>
+        <div style="text-align:center;font-size:11px;color:var(--ink);font-weight:600;letter-spacing:.08em">Q4</div>
       </div>
 
-      <!-- 각 행: 작업명 + 4칸 그리드(이 위에 막대 절대위치) -->
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">HW 양산·카탈로그</div>
-        <div style="margin:0 4px"></div>
+      <!-- 작업 행 × 8 -->
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">HW v2 양산 · KC 적합성평가</div>
+        <div style="grid-column:2/span 1;height:12px;background:#0a0a0a;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">관제 대시보드 GA</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">관제 대시보드 GA · 직생확인</div>
+        <div style="grid-column:2/span 1;height:12px;background:#0a0a0a;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">지자체 시범사업</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">지자체 시범사업 (2–3곳)</div>
+        <div style="grid-column:3/span 2;height:12px;background:#0e2a5e;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">3개 시나리오 검증</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">3개 시나리오 검증 · 규제샌드박스</div>
+        <div style="grid-column:3/span 2;height:12px;background:#0e2a5e;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">나라장터·혁신제품</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">나라장터 · 혁신제품 패스트트랙 Ⅱ</div>
+        <div style="grid-column:4/span 2;height:12px;background:#5b6a87;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">통합관제 SDK</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">통합관제 연동 SDK 공개</div>
+        <div style="grid-column:4/span 2;height:12px;background:#5b6a87;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">다부처 패키지</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px;border-bottom:1px solid var(--line)">
+        <div style="font-size:12px;color:var(--ink-2)">다부처 패키지 출시</div>
+        <div style="grid-column:5/span 1;height:12px;background:#8a8a8a;margin:0 6px"></div>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:120px repeat(4,1fr);gap:0;align-items:center;height:28px">
-        <div style="font-size:12px;color:var(--ink)">해외 레퍼런스</div>
-        <div style="margin:0 4px"></div>
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;height:30px">
+        <div style="font-size:12px;color:var(--ink-2)">NEP 지정 · 해외 레퍼런스</div>
+        <div style="grid-column:5/span 1;height:12px;background:#8a8a8a;margin:0 6px"></div>
       </div>
 
       <!-- 범례 -->
-      <div style="display:flex;gap:14px;font-size:11px;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)">
-        <div style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:8px;background:#0a0a0a;display:inline-block"></span>사업화 준비</div>
-        <div style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:8px;background:#0e2a5e;display:inline-block"></span>시범 도입</div>
-        <div style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:8px;background:#5b6a87;display:inline-block"></span>조달 · 확산</div>
-        <div style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:8px;background:#8a8a8a;display:inline-block"></span>스케일</div>
+      <div style="display:flex;gap:24px;font-size:10.5px;color:var(--muted);margin-top:14px;letter-spacing:.05em">
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:8px;background:#0a0a0a;display:inline-block"></span>사업화 준비</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:8px;background:#0e2a5e;display:inline-block"></span>시범 도입</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:8px;background:#5b6a87;display:inline-block"></span>조달 · 확산</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:8px;background:#8a8a8a;display:inline-block"></span>스케일</div>
       </div>
     </div>
 
