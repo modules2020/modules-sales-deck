@@ -346,26 +346,61 @@
        ============================================================ -->
   <section class="slide" data-i="3">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <h2><span class="fix" data-note="AI 슬로건 전형. 사실 진술로 교체 권장: '센서·통신보드·관제 SW를 단일 공급자가 책임지고 납품한다'">“센서 한 종을 사는 게 아니라, IoT 인프라 한 벌을 도입한다.”</span></h2>
+    <h2 style="font-size:32px;line-height:1.25">센서에서 관제까지의 제품을,<br/>주문에서 관리까지의 절차를 한 곳에서 공급합니다.</h2>
     <div class="section-line"></div>
+    <p style="font-size:14px;max-width:1080px;margin-top:8px">분야·벤더가 분절된 기존 안전 IoT의 한계를, 단일 공급자가 제품과 서비스 전 구간을 책임지는 방식으로 해소합니다.</p>
 
-    <div class="grid g-2" style="margin-top:14px;flex:1">
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div class="key">화재·교량·침수·사면·가스·지진·산불 — 흩어진 안전 IoT를 <u>하나의 모듈러 패키지</u>로.</div>
-        <ul class="clean">
-          <li><b>자체 설계 통신보드</b> — 어떤 센서든 꽂아서 즉시 통신·전송</li>
-          <li><b>주문형 센서 라인업</b> — 표준 센서 + 수요 기반 커스텀 제작</li>
-          <li><b>시뮬레이션 웹</b> — 도입 전에 구성·데이터 흐름·시제품 미리 확인</li>
-          <li><b>커스텀 관제 대시보드</b> — 현장 KPI에 맞춰 위젯·임계치·알림 자유 구성</li>
-        </ul>
+    <!-- 제품 축 -->
+    <div style="margin-top:16px">
+      <p style="font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em">공급 범위 — 제품</p>
+      <div style="display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;align-items:stretch;gap:0">
+        <div class="card" style="background:#fff;padding:14px;gap:4px">
+          <b style="color:var(--brand-2);font-size:14px">① 센서</b>
+          <p style="font-size:12.5px">표준 센서 + 주문형 제작 (화재·수위·진동·가스 등)</p>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700;font-size:20px">→</div>
+        <div class="card" style="background:#fff;padding:14px;gap:4px">
+          <b style="color:var(--brand-2);font-size:14px">② 통신보드</b>
+          <p style="font-size:12.5px">자체 설계 모듈러 보드 — 다종 센서·통신 표준화</p>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700;font-size:20px">→</div>
+        <div class="card" style="background:#fff;padding:14px;gap:4px">
+          <b style="color:var(--brand-2);font-size:14px">③ 관제</b>
+          <p style="font-size:12.5px">시뮬레이션 웹 + 커스텀 대시보드 + 알림</p>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start">
-        <div class="kpi"><b>1식</b><span>센서 + 보드 + 통신 + 대시보드 일괄 공급</span></div>
-        <div class="kpi"><b>수요 기반</b><span>현장 사양·규모 협의 후 구축 일정 산정 (실증 단계)</span></div>
-        <div class="kpi"><b>안전·재난</b><span>화재·교량·침수·사면·가스·지진·산불 — 다분야 적용 가능 시나리오</span></div>
-        <div class="kpi"><b>N개</b><span>요청 기반 센서/시나리오 자유 확장</span></div>
-        <!-- IMAGE: 우측 하단에 패키지 박스 일러스트(보드+센서+모니터) 작게 1컷, 약 320x180. -->
+    </div>
+
+    <!-- 절차 축 -->
+    <div style="margin-top:14px">
+      <p style="font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em">공급 범위 — 절차</p>
+      <div style="display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;align-items:stretch;gap:0">
+        <div class="card" style="background:var(--soft);padding:10px;gap:2px">
+          <b style="color:var(--brand-2);font-size:13px">① 주문·협의</b>
+          <p style="font-size:11.5px">현장 진단·사양 협의·견적 산정</p>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700">→</div>
+        <div class="card" style="background:var(--soft);padding:10px;gap:2px">
+          <b style="color:var(--brand-2);font-size:13px">② 설계·시뮬</b>
+          <p style="font-size:11.5px">웹 시뮬레이터로 구성·통신 사전 검증</p>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700">→</div>
+        <div class="card" style="background:var(--soft);padding:10px;gap:2px">
+          <b style="color:var(--brand-2);font-size:13px">③ 구축·시공</b>
+          <p style="font-size:11.5px">설치·통신 연동·관제 셋업</p>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700">→</div>
+        <div class="card" style="background:var(--soft);padding:10px;gap:2px">
+          <b style="color:var(--brand-2);font-size:13px">④ 운영·관리</b>
+          <p style="font-size:11.5px">유지보수·원격 펌웨어 갱신·운영 지원</p>
+        </div>
       </div>
+    </div>
+
+    <div class="grid g-3" style="margin-top:14px;gap:12px">
+      <div class="kpi" style="padding:12px;gap:2px"><b style="font-size:18px">단일 책임</b><span style="font-size:12px">다중 벤더 분쟁·책임 회피 방지</span></div>
+      <div class="kpi" style="padding:12px;gap:2px"><b style="font-size:18px">단일 창구</b><span style="font-size:12px">발주·운영·유지보수 절차 일원화</span></div>
+      <div class="kpi" style="padding:12px;gap:2px"><b style="font-size:18px">일관성</b><span style="font-size:12px">하드웨어·통신·UI 표준 통합 유지</span></div>
     </div>
 
     <div class="footer-meta">모듈스(Modules) · 사업제안서</div>
