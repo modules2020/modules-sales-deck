@@ -123,6 +123,42 @@
     display:block;max-width:100%;max-height:100%;width:auto;height:auto;margin:0 auto;object-fit:contain;border-radius:10px;background:#f4f7fc;
   }
 
+  /* === 수정 필요 표시 (리뷰 용) === */
+  .fix{
+    background: rgba(226, 84, 44, .22);
+    border-bottom: 2px solid #e2542c;
+    border-radius: 3px;
+    padding: 0 3px;
+    cursor: help;
+    position: relative;
+  }
+  .fix::after{
+    content: attr(data-note);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e2542c;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 360px;
+    white-space: normal;
+    width: max-content;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    line-height: 1.4;
+  }
+  .fix:hover::after{ opacity: 1; }
+  body.hide-fix .fix{ background: transparent; border-bottom: none; padding: 0; }
+  body.hide-fix .fix::after{ display: none; }
+
   /* 표지 전용 */
   .cover{
     background:
@@ -220,6 +256,7 @@
 
 <div class="toolbar">
   <button onclick="togglePresent()">발표모드 (P)</button>
+  <button onclick="document.body.classList.toggle('hide-fix')" style="background:#e2542c;border-color:#e2542c">⚠ 수정필요 하이라이트 켜고끄기</button>
   <button onclick="window.print()">PDF 저장</button>
   <span style="opacity:.7">← / → / Space</span>
 </div>
@@ -236,14 +273,14 @@
 
     <div style="margin-top:auto">
       <span class="eyebrow">사업제안서 · Business Proposal</span>
-      <h1 style="margin-top:14px">총통합 모듈러 IoT 시스템<br/>패키지 솔루션</h1>
+      <h1 style="margin-top:14px"><span class="fix" data-note="동어반복: '총'+'통합'+'시스템'+'패키지'가 사실상 같은 뜻. 제안: '현장 맞춤형 모듈러 IoT 플랫폼' 따위">총통합 모듈러 IoT 시스템<br/>패키지 솔루션</span></h1>
       <p style="margin-top:18px;font-size:20px;color:#cfe0ff;max-width:880px">
         센서 · 통신보드 · 시뮬레이션 · 관제 대시보드까지 — <br/>
         하나의 패키지로 끝내는 도시·산업 안전 IoT 인프라
       </p>
 
       <div style="display:flex;gap:32px;margin-top:36px;color:#cfe0ff;font-size:14px">
-        <div><b style="display:block;color:#fff;font-size:16px">제출처</b>소방방재청</div>
+        <div><b style="display:block;color:#fff;font-size:16px">제출처</b><span class="fix" data-note="사실관계 오류: 소방방재청은 2014년 폐지 → 국민안전처(2014–2017) → 소방청(행안부 외청, 2017~)">소방방재청</span></div>
         <div><b style="display:block;color:#fff;font-size:16px">제출일</b>2026. 05. 15</div>
         <div><b style="display:block;color:#fff;font-size:16px">담당</b>이태균 · 010-7147-1399 · gensol1399@empas.com<br/><a href="https://www.modules.co.kr" style="color:#cfe0ff;text-decoration:underline">www.modules.co.kr</a></div>
       </div>
@@ -258,7 +295,7 @@
        ============================================================ -->
   <section class="slide" data-i="2">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">COMPANY</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">COMPANY</span></span>
     <h2>회사 소개</h2>
     <div class="section-line"></div>
 
@@ -276,8 +313,8 @@
         </div>
         <div class="card" style="background:#fff">
           <h3>비전 / 미션</h3>
-          <p style="font-size:14px;line-height:1.6"><b>Vision ·</b> 도시·산업 안전 IoT 인프라를 “한 벌의 모듈러 패키지”로 단순화한다.</p>
-          <p style="font-size:14px;line-height:1.6;margin-top:6px"><b>Mission ·</b> 하드웨어부터 관제 UI까지, 자체 설계 기술로 국내 안전 IoT 공급망의 신뢰를 책임진다.</p>
+          <p style="font-size:14px;line-height:1.6"><span class="fix" data-note="AI 톤 표어식 문장. 자연스러운 문어체로 재작성 권장"><b>Vision ·</b> 도시·산업 안전 IoT 인프라를 “한 벌의 모듈러 패키지”로 단순화한다.</span></p>
+          <p style="font-size:14px;line-height:1.6;margin-top:6px"><span class="fix" data-note="AI 톤 표어식 문장. 자연스러운 문어체로 재작성 권장"><b>Mission ·</b> 하드웨어부터 관제 UI까지, 자체 설계 기술로 국내 안전 IoT 공급망의 신뢰를 책임진다.</span></p>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
@@ -311,8 +348,8 @@
        ============================================================ -->
   <section class="slide" data-i="3">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">EXECUTIVE SUMMARY</span>
-    <h2>“센서 한 종을 사는 게 아니라, IoT 인프라 한 벌을 도입한다.”</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화: '요약'">EXECUTIVE SUMMARY</span></span>
+    <h2><span class="fix" data-note="AI 슬로건 전형. 사실 진술로 교체 권장: '센서·통신보드·관제 SW를 단일 공급자가 책임지고 납품한다'">“센서 한 종을 사는 게 아니라, IoT 인프라 한 벌을 도입한다.”</span></h2>
     <div class="section-line"></div>
 
     <div class="grid g-2" style="margin-top:14px;flex:1">
@@ -327,8 +364,8 @@
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start">
         <div class="kpi"><b>1식</b><span>센서 + 보드 + 통신 + 대시보드 일괄 공급</span></div>
-        <div class="kpi"><b>≤ 2주</b><span>표준 패키지 기준 평균 구축 리드타임 ※목표</span></div>
-        <div class="kpi"><b>7+ 분야</b><span>화재·교량·침수·사면·가스·지진·산불 검증 시나리오</span></div>
+        <div class="kpi"><b><span class="fix" data-note="실측 없는 가짜 KPI. '목표'이라 적어도 근거 없으면 빂 것">≤ 2주</span></b><span>표준 패키지 기준 평균 구축 리드타임 ※목표</span></div>
+        <div class="kpi"><b><span class="fix" data-note="실증 안 된 '검증 시나리오'. 레퍼런스 없으면 '적용 가능 시나리오'로 표현 변경">7+ 분야</span></b><span>화재·교량·침수·사면·가스·지진·산불 검증 시나리오</span></div>
         <div class="kpi"><b>N개</b><span>요청 기반 센서/시나리오 자유 확장</span></div>
         <!-- IMAGE: 우측 하단에 패키지 박스 일러스트(보드+센서+모니터) 작게 1컷, 약 320x180. -->
       </div>
@@ -344,7 +381,7 @@
        ============================================================ -->
   <section class="slide" data-i="4">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">PROBLEM</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">PROBLEM</span></span>
     <h2>안전·재난 IoT 시장의 3가지 고질병</h2>
     <div class="section-line"></div>
 
@@ -391,11 +428,11 @@
        ============================================================ -->
   <section class="slide" data-i="5">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">SOLUTION</span>
-    <h2>총통합 모듈러 IoT 시스템 패키지</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">SOLUTION</span></span>
+    <h2><span class="fix" data-note="동어반복: '총'+'통합'+'시스템'+'패키지' 모두 같은 의미">총통합 모듈러 IoT 시스템 패키지</span></h2>
     <div class="section-line"></div>
     <p style="font-size:17px;max-width:1000px">
-      <b>“레고처럼 끼우고, 웹에서 미리 보고, 한 화면에서 관제한다.”</b>
+      <b><span class="fix" data-note="AI 광고 카피 전형. 제거 권장">“레고처럼 끼우고, 웹에서 미리 보고, 한 화면에서 관제한다.”</span></b>
       자체 설계 통신보드를 중심으로, 표준·커스텀 센서를 자유롭게 결합하고,
       도입 전 시뮬레이션 웹에서 구성을 검증한 뒤, 커스텀 관제 대시보드로 운영합니다.
     </p>
@@ -418,8 +455,8 @@
        ============================================================ -->
   <section class="slide" data-i="6">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">PRODUCT · A</span>
-    <h2>자체 설계 통신보드 — “센서 무엇이든, 통신 어디서든”</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">PRODUCT · A</span></span>
+    <h2>자체 설계 통신보드 <span class="fix" data-note="AI 광고 커피. 해당 부분 제거 권장">— “센서 무엇이든, 통신 어디서든”</span></h2>
     <div class="section-line"></div>
 
     <div class="grid g-2" style="margin-top:14px;flex:1">
@@ -461,7 +498,7 @@
        ============================================================ -->
   <section class="slide" data-i="7">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">PRODUCT · B</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">PRODUCT · B</span></span>
     <h2>모듈러 센서 라인업 + 주문형 제작</h2>
     <div class="section-line"></div>
 
@@ -497,8 +534,8 @@
        ============================================================ -->
   <section class="slide" data-i="8">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">PRODUCT · C</span>
-    <h2>구성 시뮬레이션 웹 — “사기 전에 미리 본다”</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">PRODUCT · C</span></span>
+    <h2>구성 시뮬레이션 웹 <span class="fix" data-note="AI 광고 커피. 해당 부분 제거 권장">— “사기 전에 미리 본다”</span></h2>
     <div class="section-line"></div>
 
     <div class="grid g-2" style="margin-top:14px;flex:1">
@@ -512,7 +549,7 @@
         </ul>
 
         <div class="key" style="font-size:16px">
-          “설치 후 깨닫는” 비용을 0에 가깝게 — <b>검증된 구성만 발주</b>합니다.
+          <span class="fix" data-note="AI 광고 커피. 사실 진술로: '설치 전 구성을 웹에서 검증해 재시공 비용을 줄입니다'">“설치 후 깨닫는” 비용을 0에 가깝게 — <b>검증된 구성만 발주</b>합니다.</span>
         </div>
       </div>
       <div>
@@ -531,8 +568,8 @@
        ============================================================ -->
   <section class="slide" data-i="9">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">PRODUCT · D</span>
-    <h2>커스텀 관제 대시보드 — 현장 KPI에 맞춘 한 화면</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">PRODUCT · D</span></span>
+    <h2>커스텀 관제 대시보드 <span class="fix" data-note="AI 광고 커피. 해당 부분 제거 권장">— 현장 KPI에 맞춘 한 화면</span></h2>
     <div class="section-line"></div>
 
     <div class="grid g-2" style="margin-top:14px;flex:1">
@@ -572,7 +609,7 @@
        ============================================================ -->
   <section class="slide" data-i="10">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">ARCHITECTURE</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">ARCHITECTURE</span></span>
     <h2>End-to-End 아키텍처</h2>
     <div class="section-line"></div>
 
@@ -619,8 +656,8 @@
        ============================================================ -->
   <section class="slide" data-i="11">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">DIFFERENTIATION</span>
-    <h2>왜 우리 패키지인가</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">DIFFERENTIATION</span></span>
+    <h2><span class="fix" data-note="자화자찬 톤. 공공제안서에서 감점 요소. '제안 차별점' 정도로 도명">왜 우리 패키지인가</span></h2>
     <div class="section-line"></div>
 
     <div class="diff" style="margin-top:14px">
@@ -654,20 +691,20 @@
        ============================================================ -->
   <section class="slide" data-i="12">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">USE CASES</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">USE CASES</span></span>
     <h2>실제 적용 사례</h2>
     <div class="section-line"></div>
     <p style="font-size:15px">아래는 현재까지 검증된 시나리오이며, 모두 동일한 통신보드·관제 플랫폼 위에서 구성됩니다.</p>
 
     <div class="cases" style="margin-top:18px">
-      <div class="case"><span class="tag">FIRE</span><h4>화재경보기 시스템</h4><p>연기·열·CO 다중 센서, 다단 경보, 119 연동.</p></div>
-      <div class="case"><span class="tag">BRIDGE</span><h4>남대문 교량 관측</h4><p>가속도·기울기·변위·온도로 구조물 거동 상시 모니터링.</p></div>
-      <div class="case"><span class="tag">FLOOD</span><h4>상습침수지역·저수지 수위</h4><p>초음파/압력 수위 + 강수 + 맨홀 센서 통합 경보.</p></div>
-      <div class="case"><span class="tag">SLOPE</span><h4>분안정지대 기울기·하중</h4><p>경사계·스트레인 게이지로 사면 붕괴 사전 감지.</p></div>
-      <div class="case"><span class="tag">GAS</span><h4>가스 유출 감시</h4><p>LEL/H₂S/VOC 다중 가스 + 풍향 결합으로 확산 추적.</p></div>
-      <div class="case"><span class="tag">QUAKE</span><h4>지진 감지</h4><p>3축 지진동 노드 분산 배치, 시·구 단위 통합 알림.</p></div>
-      <div class="case"><span class="tag">WILDFIRE</span><h4>산불 감지·계측</h4><p>온습도·풍속·IR 열화상 노드, 발화 위험지수 산출.</p></div>
-      <div class="case"><span class="tag">EXT</span><h4>요청 기반 자유 확장</h4><p>요구 시나리오에 맞춰 신규 센서·룰·대시보드 즉시 추가.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '화재'">FIRE</span></span><h4>화재경보기 시스템</h4><p>연기·열·CO 다중 센서, 다단 경보, 119 연동.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '교량'">BRIDGE</span></span><h4><span class="fix" data-note="사실관계 의심: 남대문은 숨례문(성문)이며 교량 아님. 실제 교량명으로 교체 필요">남대문 교량 관측</span></h4><p>가속도·기울기·변위·온도로 구조물 거동 상시 모니터링.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '침수'">FLOOD</span></span><h4>상습침수지역·저수지 수위</h4><p>초음파/압력 수위 + 강수 + 맨홀 센서 통합 경보.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '사면'">SLOPE</span></span><h4><span class="fix" data-note="오타 가능성: '분안정지대' → '불안정 지대' 또는 '불안정 사면'">분안정지대</span> 기울기·하중</h4><p>경사계·스트레인 게이지로 사면 붕괴 사전 감지.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '가스'">GAS</span></span><h4>가스 유출 감시</h4><p>LEL/H₂S/VOC 다중 가스 + 풍향 결합으로 확산 추적.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '지진'">QUAKE</span></span><h4>지진 감지</h4><p>3축 지진동 노드 분산 배치, 시·구 단위 통합 알림.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '산불'">WILDFIRE</span></span><h4>산불 감지·계측</h4><p>온습도·풍속·IR 열화상 노드, 발화 위험지수 산출.</p></div>
+      <div class="case"><span class="tag"><span class="fix" data-note="영문 태그 한글화 권장: '확장' 등">EXT</span></span><h4>요청 기반 자유 확장</h4><p>요구 시나리오에 맞서 신규 센서·룰·대시보드 즉시 추가.</p></div>
     </div>
     <!-- IMAGE: 각 case 카드 상단에 픽토그램 8종(작게)을 추후 삽입 권장. -->
 
@@ -680,7 +717,7 @@
        ============================================================ -->
   <section class="slide" data-i="13">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">USE CASE · DETAIL ①</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">USE CASE · DETAIL ①</span></span>
     <h2>A사 건축현장 하중계 모니터링</h2>
     <div class="section-line"></div>
     <p style="font-size:15px;max-width:980px">
@@ -729,7 +766,7 @@
        ============================================================ -->
   <section class="slide" data-i="14">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">USE CASE · DETAIL ②</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">USE CASE · DETAIL ②</span></span>
     <h2>건설현장 건물 경사계 구성도</h2>
     <div class="section-line"></div>
     <p style="font-size:15px;max-width:980px">
@@ -760,7 +797,7 @@
             <li><b>관제</b>: 시계열·등고선·트리거 알람, 인허가 보고서 자동 출력</li>
           </ul>
         </div>
-        <div class="key" style="font-size:15px">민원·법적 분쟁의 70%는 “데이터가 없어서” 발생합니다 — 객관 데이터로 분쟁을 차단합니다.</div>
+        <div class="key" style="font-size:15px"><span class="fix" data-note="근거 없는 수치('70%'), AI 카피 톤. 제거 권장">민원·법적 분쟁의 70%는 “데이터가 없어서” 발생합니다 — 객관 데이터로 분쟁을 차단합니다.</span></div>
       </div>
     </div>
 
@@ -774,7 +811,7 @@
        ============================================================ -->
   <section class="slide" data-i="15">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">USE CASE · DETAIL ③</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">USE CASE · DETAIL ③</span></span>
     <h2>스마트 재난경보시스템</h2>
     <div class="section-line"></div>
     <p style="font-size:15px;max-width:1000px">
@@ -825,7 +862,7 @@
        ============================================================ -->
   <section class="slide" data-i="16">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">USE CASE · DETAIL ④</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">USE CASE · DETAIL ④</span></span>
     <h2>상습침수지역 모터보드 — 감지에서 “자동 대응”까지</h2>
     <div class="section-line"></div>
     <p style="font-size:15px;max-width:1000px">
@@ -858,7 +895,7 @@
             <li>강수 + 상류 수위 복합 조건 시 <b>선제 가동</b></li>
           </ul>
         </div>
-        <div class="key" style="font-size:15px">감지에서 끝나지 않습니다 — <b>대응</b>까지 한 패키지로.</div>
+        <div class="key" style="font-size:15px"><span class="fix" data-note="AI 광고 커피 톤. 제거 권장">감지에서 끝나지 않습니다 — <b>대응</b>까지 한 패키지로.</span></div>
       </div>
     </div>
 
@@ -873,8 +910,8 @@
        ============================================================ -->
   <section class="slide" data-i="17">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">EXTENSIBILITY</span>
-    <h2>확장 가능 분야 — 같은 플랫폼, 다른 미션</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">EXTENSIBILITY</span></span>
+    <h2>확장 가능 분야 <span class="fix" data-note="AI 톤 부제. 단순히 '확장 가능 분야'만 남기는 게 낫다">— 같은 플랫폼, 다른 미션</span></h2>
     <div class="section-line"></div>
     <p>동일한 통신보드 + 관제 플랫폼 위에서 추가 개발 없이도 적용 가능한 분야들입니다.</p>
 
@@ -899,7 +936,7 @@
        ============================================================ -->
   <section class="slide" data-i="18">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">MARKET</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">MARKET</span></span>
     <h2>시장 규모 & 정책 환경 (B2G)</h2>
     <div class="section-line"></div>
 
@@ -940,7 +977,7 @@
        ============================================================ -->
   <section class="slide" data-i="19">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">BUSINESS MODEL</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">BUSINESS MODEL</span></span>
     <h2>비즈니스 모델 · 가격 구조 (예시)</h2>
     <div class="section-line"></div>
 
@@ -983,8 +1020,8 @@
       <div class="card" style="background:#fff">
         <h3>유지보수·SLA</h3>
         <ul class="clean">
-          <li>장애 1차 응답 <b>[X]시간</b>, 현장 출동 <b>[XX]시간</b> 이내</li>
-          <li>월간 가용성 <b>[99.X]%</b> 보장</li>
+          <li>장애 1차 응답 <b><span class="fix" data-note="실측·계약 없는 가짜 SLA">[X]시간</span></b>, 현장 출동 <b><span class="fix" data-note="실측·계약 없는 가짜 SLA">[XX]시간</span></b> 이내</li>
+          <li>월간 가용성 <b><span class="fix" data-note="실측 없는 가짜 KPI. 운영 이력 없으면 뺀다">[99.X]%</span></b> 보장</li>
           <li>분기 정기 점검 + 연간 펌웨어/SW 업그레이드</li>
         </ul>
       </div>
@@ -1000,8 +1037,8 @@
        ============================================================ -->
   <section class="slide" data-i="20">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">ROADMAP</span>
-    <h2>실행 로드맵 (예시)</h2>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화">ROADMAP</span></span>
+    <h2>실행 로드맵 <span class="fix" data-note="'(예시)' 표기는 발표 전 제거. 예시임을 밝히면 신뢰도 떨어짐">(예시)</span></h2>
     <div class="section-line"></div>
 
     <div class="road">
@@ -1083,7 +1120,7 @@
        ============================================================ -->
   <section class="slide" data-i="21">
     <div class="brand"><span class="dot"></span> 모듈스(Modules) · Modular IoT Systems</div>
-    <span class="eyebrow">BUSINESS PLAN</span>
+    <span class="eyebrow"><span class="fix" data-note="영문 라벨 제거 또는 한글화 권장">BUSINESS PLAN</span></span>
     <h2>사업계획</h2>
     <div class="section-line"></div>
 
@@ -1118,14 +1155,14 @@
           </ul>
         </div>
         <div class="key">
-          “하나의 패키지로, 도시 안전을 한 화면에.” <br/>
+          <span class="fix" data-note="AI 슬로건 톤. '한 패키지', '한 화면'은 덩 반복되는 관용구. 조용한 마무리로“하나의 패키지로, 도시 안전을 한 화면에.”</span> <br/>
           <span style="font-weight:400;font-size:14px;opacity:.9">파일럿부터 함께 시작하겠습니다.</span>
         </div>
         <div class="card" style="background:var(--soft)">
           <h3>Contact</h3>
           <p style="font-size:14px">
             모듈스(Modules) · 이태균 <br/>
-            [주소] · 010-7147-1399 · gensol1399@empas.com · <a href="https://www.modules.co.kr" style="color:var(--brand)">www.modules.co.kr</a>
+            <span class="fix" data-note="빈 자리·발표 전 반드시 채워야 함">[주소]</span> · 010-7147-1399 · gensol1399@empas.com · <a href="https://www.modules.co.kr" style="color:var(--brand)">www.modules.co.kr</a>
           </p>
         </div>
       </div>
