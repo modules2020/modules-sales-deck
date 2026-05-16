@@ -67,7 +67,7 @@
     font-size:11px;color:var(--ink-2);
     letter-spacing:.15em;font-feature-settings:"tnum";
   }
-  .pageno::after{content:" / 27";color:var(--muted)}
+  .pageno::after{content:" / 26";color:var(--muted)}
 
   .footer-meta{
     position:absolute;left:72px;bottom:28px;
@@ -340,7 +340,7 @@
     <div class="brand">MODULES · MODULAR IOT SYSTEMS</div>
     <h2>목차</h2>
     <div class="section-line"></div>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:2px">총 27 페이지 · 약 20분 발표 권장</p>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:2px">총 26 페이지 · 약 20분 발표 권장</p>
 
     <div class="grid g-2" style="margin-top:10px;flex:1;gap:14px">
       <div style="display:flex;flex-direction:column;gap:8px">
@@ -387,14 +387,13 @@
           <h3 style="font-size:14px;color:var(--brand-2)">Ⅴ. 실행 · 합의</h3>
           <ul class="clean" style="font-size:12px;line-height:1.5">
             <li>24 · 실행 로드맵 · 간트</li>
-            <li>25 · 위험 · 가정 · 제외 <span class="pill" style="font-size:10px;background:#ffe7d4;color:var(--warn)">신규</span></li>
-            <li>26 · 사업계획 · Ask</li>
-            <li>27 · 수락 · 다음 단계 <span class="pill" style="font-size:10px;background:#ffe7d4;color:var(--warn)">신규</span></li>
+            <li>25 · 사업계획 · Ask</li>
+            <li>26 · 수락 · 다음 단계</li>
           </ul>
         </div>
         <div class="card" style="background:var(--soft);border-left:4px solid var(--brand)">
           <h3 style="font-size:13px">발표 가이드</h3>
-          <p style="font-size:12px;line-height:1.5">의사결정자: <b>04·14·21·27</b> (4장) · 기술검토자: <b>07~13 + 25</b> (8장) · 예산담당: <b>21·23·26</b> (3장)</p>
+          <p style="font-size:12px;line-height:1.5">의사결정자: <b>04·14·21·26</b> (4장) · 기술검토자: <b>07~13</b> (7장) · 예산담당: <b>21·23·25</b> (3장)</p>
         </div>
       </div>
     </div>
@@ -1386,59 +1385,6 @@
   <!-- ============================================================
        SLIDE 15 — 로드맵
        ============================================================ -->
-  <!-- ============================================================
-       SLIDE 24 — 위험 · 가정 · 제외 (신규, APMP 표준 Risk/Assumptions/Exclusions)
-       ============================================================ -->
-  <section class="slide" data-i="24">
-    <div class="brand">MODULES · MODULAR IOT SYSTEMS</div>
-    <h2>위험 · 가정 · 제외</h2>
-    <div class="section-line"></div>
-    <p style="font-size:14px;max-width:1000px">본 제안의 가격·일정에 영향을 미치는 조건을 명시적으로 분리합니다. <b>가정</b>은 가격에 반영된 전제, <b>제외</b>는 범위 밖, <b>위험</b>은 식별·완화 대상입니다.</p>
-
-    <div class="grid g-3" style="margin-top:14px;flex:1;gap:14px">
-      <div class="card" style="background:#fff;border-left:4px solid var(--warn)">
-        <h3 style="color:var(--warn)">위험 (Risks) · 완화</h3>
-        <ul class="clean" style="font-size:12.5px;line-height:1.7">
-          <li><b>반도체·LoRa 모듈 수급</b> — 2차 벤더 이중화, 6개월 안전재고</li>
-          <li><b>현장 통신 음영</b> — 도입 전 시뮬 + LoRa·LTE-M 이중화 설계</li>
-          <li><b>OTA 펌웨어 롤백</b> — A/B 파티션, 자동 롤백, 단계 배포</li>
-          <li><b>모터보드 오작동 (S18)</b> — 페일세이프 회로, 수동 우선 스위치, 책임보험 + <b>IEC 61508 SIL2</b> 목표</li>
-          <li><b>사이버 보안 사고</b> — 디바이스 인증서, TLS, 망분리, <b>ISMS-P 추진</b></li>
-          <li><b>현장 인력 운영 부담</b> — 운영자 셀프 대시보드, 분기 정기 점검 SLA</li>
-          <li><b>데이터 거버넌스</b> — 발주처 소유 원칙, 외부 공유는 발주처 사전 승인</li>
-        </ul>
-      </div>
-      <div class="card" style="background:#fff;border-left:4px solid var(--accent)">
-        <h3 style="color:var(--accent)">가정 (Assumptions) — 가격 반영</h3>
-        <ul class="clean" style="font-size:12.5px;line-height:1.7">
-          <li>설치 현장 출입 권한·전원 인입은 발주처 제공</li>
-          <li>관제 서버 호스팅 환경(IDC/클라우드)은 발주처 또는 모듈스 표준 中 사전 합의</li>
-          <li>통신 회선료(LTE-M·전용회선)는 발주처 부담 또는 별도 견적</li>
-          <li>현장 기초공사(앵커·전원함·통신함)는 발주처 또는 SI 시공사 분담</li>
-          <li>기존 통합관제·119 연동은 표준 API(MQTT/REST) 제공 시 기본 포함</li>
-          <li>실증 기간 데이터 공동활용 — 모듈스는 익명화 후 R&amp;D 활용 가능</li>
-        </ul>
-      </div>
-      <div class="card" style="background:#fff;border-left:4px solid var(--muted)">
-        <h3 style="color:var(--muted)">제외 (Exclusions) — 범위 밖</h3>
-        <ul class="clean" style="font-size:12.5px;line-height:1.7">
-          <li>관제실 인테리어·디스플레이 하드웨어 공급</li>
-          <li>발주처 내부망 ITSM·AD·SSO 연동 (별도 인일)</li>
-          <li>비표준 레거시 프로토콜 어댑터 개발 (별도 NRE)</li>
-          <li>비IoT 영역(영상분석·CCTV·VMS 자체 개발)</li>
-          <li>현장 토목·전기·소방 면허 공사</li>
-          <li>발주처 자체 운영인력 채용·교육 위탁</li>
-          <li>본 제안서에 명시되지 않은 신규 분야 센서 신규 개발</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="cap" style="margin-top:8px">※ 가정·제외 항목은 모두 가격·일정에 영향을 미치며, 변경 발생 시 변경관리(Change Control) 절차로 협의·재산정합니다.</p>
-
-    <div class="footer-meta">모듈스(Modules) · 사업제안서</div>
-    <div class="pageno">24</div>
-  </section>
-
 
   <section class="slide" data-i="23">
     <div class="brand">MODULES · MODULAR IOT SYSTEMS</div>
@@ -1513,7 +1459,7 @@
     </div>
 
     <div class="footer-meta">모듈스(Modules) · 사업제안서</div>
-    <div class="pageno">25</div>
+    <div class="pageno">24</div>
   </section>
 
 
@@ -1570,7 +1516,7 @@
     </div>
 
     <div class="footer-meta">모듈스(Modules) · 사업제안서</div>
-    <div class="pageno">26</div>
+    <div class="pageno">25</div>
   </section>
 
   <!-- ============================================================
@@ -1629,7 +1575,7 @@
     <p class="cap" style="margin-top:8px">※ 본 수락 양식은 의향 확인용이며, 정식 계약은 발주처 표준 협약서·SLA·보안서약서를 별도 체결합니다. 전자서명은 「전자문서 및 전자거래 기본법」에 따라 법적 효력을 갖습니다.</p>
 
     <div class="footer-meta">모듈스(Modules) · 사업제안서</div>
-    <div class="pageno">27</div>
+    <div class="pageno">26</div>
   </section>
 
 </div>
